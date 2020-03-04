@@ -5,15 +5,32 @@
 {% block content %}
     <h1 class="display-4 text-center my-4">Поезда</h1>
     <div class="row">
-        <div class=" col-md-6 mx-auto">
+        <div class=" col-md-8 mx-auto">
             <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Номер поезда</th>
+                        <th>Откуда</th>
+                        <th>Куда</th>
+                        <th>Время в пути</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
                 <tbody>
                 {% for object in objects_list %}
                     <tr>
                         <td>
-                            <a href="#">
-                                {{ object.name }}
-                            </a>
+                            {{ object.name }}
+                        </td>
+                        <td>
+                            {{ object.from_city }}
+                        </td>
+                        <td>
+                            {{ object.to_city }}
+                        </td>
+                        <td>
+                            {{ object.travel_time }}
                         </td>
                         <td>
                             <a href="#">
