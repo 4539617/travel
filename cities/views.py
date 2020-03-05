@@ -9,7 +9,6 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
 
-
 def home(request):
     # if request.method == 'POST':
     #     form = CityForm(request.POST or None)
@@ -20,7 +19,7 @@ def home(request):
     paginator = Paginator(cities, 10)
     page = request.GET.get('page')
     cities = paginator.get_page(page)
-    return render(request, 'cities/home.html', {'objects_list': cities,})
+    return render(request, 'cities/home.html', {'objects_list': cities, })
 
 
 class CityDetailView(DetailView):
@@ -43,6 +42,7 @@ class CityUpdateView(SuccessMessageMixin, UpdateView):
     template_name = 'cities/update.html'
     success_url = reverse_lazy('city:home')
     success_message = 'Город успешно отредактирован'
+
 
 class CityDeleteView(DeleteView):
     model = City

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'cities.apps.CitiesConfig',
     'trains.apps.TrainsConfig',
+    'routes.apps.RoutesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
